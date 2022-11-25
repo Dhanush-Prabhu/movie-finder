@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="favi icon" type="image" href="Images/Making Filming Movie Film Production Filmmaking Filmmaker Director Actor Crew Camera Cameraman Clapperboard Digital Download PNG SVG Vector.jpeg" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <link rel="stylesheet" type="text/css" href="queries.css" />
+    <script src="index.js"></script>
+    <title>Movie Finder</title>
+  </head>
+  <body>
+
+    <header class="header">
+      <div >
+      <img class="img-logo" src="Images/For The Movie Buffs.png" alt="film logo">
+    </div>
+    <div >  
+    <nav class="main-nav">
+        <ul class="main-nav-list">
+          <li><a class="main-nav-list" href="https://www.imdb.com/chart/top/">Top 10 movies </a></li>
+          <li><a class="main-nav-list" href="https://collider.com/best-movies-on-amazon-prime/">Best Amazon Prime Movies  </a></li>
+          <li><a class="main-nav-list" href="https://collider.com/top-10-netflix-movies-list-most-popular/">Top 10 Netflix movies </a></li>
+          <li><a class="main-nav-list" href="#footer-in">Project Details </a></li>
+        </ul>
+      </nav>
+    </div>
+    </header>
+
+    <section class="section-hero">
+      <div class="hero">
+        <div class="hero-text-box">
+          <h1 class="heading-primary">A Movie Finder Website</h1>
+          <p class="hero-description">
+         This is a Movie Finder webside that allows you to find any movie which you mention in the search button. Alao has a whole bunch of information regarding the Movie you Searched for 
+          </p>
+      <div>
+    <form class="sign-up" name="movie_form" onsubmit="return false">
+      <!--Website Logo-->
+      <div class="sign-up-box">
+      <input
+        type="text"
+        class="text"
+        placeholder="Enter the Movie name"
+        id="movie_name"
+        name="movie_name"
+      />
+      </div>
+      <input
+        type="submit"
+        class="submit"
+        id="submit-button"
+        onclick="find_movie(document.forms['movie_form']['movie_name'].value);"
+        value="Search"
+      />
+    </form>
+  </div>
+  
+        <!-- <a href="#connect" class="btn">click to view</a> -->
+      </div>
+      <div class="hero-img-box">
+        <img
+          src="Images/Making Filming Movie Film Production Filmmaking Filmmaker Director Actor Crew Camera Cameraman Clapperboard Digital Download PNG SVG Vector.jpeg"
+          class="hero-img"
+          alt="Picture of Dhanush E"
+        />     
+      </div>
+    </section>
+    <!--Form-->
+
+
+    <dialog id="movie_result_dialog" title="Movie Not Found">
+      <img id="movie_result" />
+      <button id="try-again-button" onclick="try_again_click();">
+        Try Again
+      </button>
+    </dialog>
+
+    <div id="movie_details">
+      <!--Movie Data Table-->
+      <table id="movie-table" style="display: none">
+        <caption id="movie-title" style="color: white"></caption>
+        <tr>
+          <th>Poster</th>
+          <td id="image-data"><img id="poster" src="" /></td>
+        </tr>
+        <tr>
+          <th>Title</th>
+          <td id="title"></td>
+        </tr>
+        <tr>
+          <th>Year</th>
+          <td id="year"></td>
+        </tr>
+        <tr>
+          <th>Released on</th>
+          <td id="release-date"></td>
+        </tr>
+        <tr>
+          <th>Genre</th>
+          <td id="genre"></td>
+        </tr>
+        <tr>
+          <th>Productions</th>
+          <td id="productions"></td>
+        </tr>
+        <tr>
+          <th>Director</th>
+          <td id="director"></td>
+        </tr>
+        <tr>
+          <th>Writer</th>
+          <td id="writer"></td>
+        </tr>
+        <tr>
+          <th>Cast</th>
+          <td id="cast"></td>
+        </tr>
+        <tr>
+          <th>Story</th>
+          <td id="story"></td>
+        </tr>
+        <tr>
+          <th>Country</th>
+          <td id="country"></td>
+        </tr>
+        <tr>
+          <th>Language</th>
+          <td id="language"></td>
+        </tr>
+        <tr>
+          <th>Awards</th>
+          <td id="awards"></td>
+        </tr>
+        <tr>
+          <th>IMDB ID</th>
+          <td id="imdb-id"></td>
+        </tr>
+        <tr>
+          <th>IMDB Rating</th>
+          <td id="rating"></td>
+        </tr>
+        <tr>
+          <th>Box Office</th>
+          <td id="box-office"></td>
+        </tr>
+      </table>
+    </div>
+    <script>
+  
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      var movie_name = urlParams.get("movie_name");
+
+      if (movie_name != null) {
+        find_movie(movie_name);
+      }
+    </script>
+     <footer class="footer-out" id="footer-in">
+      <div class="container">
+        <!-- <div class="footer-img"></div> -->
+      <div class="container-inner">
+        <p class="paragraph">Names = Dhanush.P and Dhanush.E</p>
+        <p class="paragraph">Topic = Movie Finder</p> 
+        <p class="paragraph">Skills used = HTML , CSS and JavaScript</p>
+        <br>
+        <p class="paragraph">Github ID's</p>
+        <br>
+        <div class="github">
+        <a class="github-one" href="https://github.com/Dhanush-Prabhu">Dhanush.P Github ID</a>
+        <a class="github-one" href="https://github.com/Dhanush-E">Dhanush.E Github ID</a>
+      </div>
+      <br>
+      <p class="paragraph">Linkedin ID</p>
+      <br>
+      <div class="github">
+      <a class="github-one" href="https://www.linkedin.com/in/dhanush-p/">Dhanush-P linkedin ID</a>
+      <a class="github-one" href="https://www.linkedin.com/in/dhanush-e-5092761a1">Dhanush-E linkedin ID</a>
+    </div>
+      </div>
+      </div>
+      <div class="click-on">
+        <a class="click" href="#">Click to go back</a>
+      </div>
+    </footer>
+  </body>
+</html>
